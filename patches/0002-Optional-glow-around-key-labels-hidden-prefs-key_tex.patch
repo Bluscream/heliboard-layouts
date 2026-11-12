@@ -1,0 +1,80 @@
+From 073c32bcd21a2685acbf3c2eab920d21c39d1fac Mon Sep 17 00:00:00 2001
+From: Bluscream <bluscream@users.noreply.github.com>
+Date: Thu, 12 Nov 2026 11:22:09 +0100
+Subject: [PATCH 2/4] Optional glow around key labels (hidden prefs
+ key_text_glow_radius_dp / key_text_glow_color)
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+---
+ .../keyboard/keyboard/KeyboardView.java       | 19 ++++++++++++++++++-
+ 1 file changed, 18 insertions(+), 1 deletion(-)
+
+diff --git a/app/src/main/java/helium314/keyboard/keyboard/KeyboardView.java b/app/src/main/java/helium314/keyboard/keyboard/KeyboardView.java
+index f6ab538..2d79357 100644
+--- a/app/src/main/java/helium314/keyboard/keyboard/KeyboardView.java
++++ b/app/src/main/java/helium314/keyboard/keyboard/KeyboardView.java
+@@ -9,6 +9,7 @@ package helium314.keyboard.keyboard;
+ import static helium314.keyboard.keyboard.KeyboardTheme.STYLE_ROUNDED;
+ 
+ import android.content.Context;
++import android.content.SharedPreferences;
+ import android.content.res.TypedArray;
+ import android.graphics.Bitmap;
+ import android.graphics.Canvas;
+@@ -39,6 +40,7 @@ import helium314.keyboard.latin.common.StringUtilsKt;
+ import helium314.keyboard.latin.settings.Settings;
+ import helium314.keyboard.latin.suggestions.MoreSuggestions;
+ import helium314.keyboard.latin.suggestions.MoreSuggestionsView;
++import helium314.keyboard.latin.utils.KtxKt;
+ import helium314.keyboard.latin.utils.TypefaceUtils;
+ 
+ import java.util.HashSet;
+@@ -56,6 +58,11 @@ public class KeyboardView extends View {
+     private final float mKeyPopupHintLetterPadding;
+     private final float mKeyShiftedLetterHintPadding;
+     private final float mKeyTextShadowRadius;
++    // Optional glow around key labels and hints (hidden prefs, see PREF_KEY_TEXT_GLOW_*), 0 = off
++    private final float mKeyTextGlowRadius;
++    private final int mKeyTextGlowColor;
++    public static final String PREF_KEY_TEXT_GLOW_RADIUS = "key_text_glow_radius_dp";
++    public static final String PREF_KEY_TEXT_GLOW_COLOR = "key_text_glow_color";
+     private final float mVerticalCorrection;
+     private final Drawable mKeyBackground;
+     private final Drawable mFunctionalKeyBackground;
+@@ -136,6 +143,10 @@ public class KeyboardView extends View {
+                 R.styleable.KeyboardView_keyShiftedLetterHintPadding, 0.0f);
+         mKeyTextShadowRadius = keyboardViewAttr.getFloat(
+                 R.styleable.KeyboardView_keyTextShadowRadius, KET_TEXT_SHADOW_RADIUS_DISABLED);
++        final SharedPreferences glowPrefs = KtxKt.prefs(context);
++        mKeyTextGlowRadius = glowPrefs.getInt(PREF_KEY_TEXT_GLOW_RADIUS, 0)
++                * context.getResources().getDisplayMetrics().density;
++        mKeyTextGlowColor = glowPrefs.getInt(PREF_KEY_TEXT_GLOW_COLOR, 0xFF33B5E5);
+         mVerticalCorrection = keyboardViewAttr.getDimension(
+                 R.styleable.KeyboardView_verticalCorrection, 0.0f);
+         keyboardViewAttr.recycle();
+@@ -437,7 +448,9 @@ public class KeyboardView extends View {
+                 else
+                     paint.setColor(key.selectTextColor(params));
+                 // Set a drop shadow for the text if the shadow radius is positive value.
+-                if (mKeyTextShadowRadius > 0.0f) {
++                if (mKeyTextGlowRadius > 0.0f) {
++                    paint.setShadowLayer(mKeyTextGlowRadius, 0.0f, 0.0f, mKeyTextGlowColor);
++                } else if (mKeyTextShadowRadius > 0.0f) {
+                     paint.setShadowLayer(mKeyTextShadowRadius, 0.0f, 0.0f, params.mTextShadowColor);
+                 } else {
+                     paint.clearShadowLayer();
+@@ -501,7 +514,11 @@ public class KeyboardView extends View {
+             final float adjustmentY = isFunctionalKeyAndRoundedStyle
+                     ? hintBaseline * 0.5f
+                     : params.mHintLabelVerticalAdjustment * labelCharHeight;
++            if (mKeyTextGlowRadius > 0.0f) {
++                paint.setShadowLayer(mKeyTextGlowRadius / 2.0f, 0.0f, 0.0f, mKeyTextGlowColor);
++            }
+             canvas.drawText(hintLabel, 0, hintLabel.length(), hintX, hintBaseline + adjustmentY, paint);
++            paint.clearShadowLayer();
+         } else if (hintIcon != null) {
+             int iconSize = (int) (key.selectHintTextSize(params) * mHintFontSizeMultiplier);
+             boolean isFunctionalKeyAndRoundedStyle = mColors.getThemeStyle().equals(STYLE_ROUNDED) && (key.hasFunctionalBackground() || key.hasActionKeyBackground());
+-- 
+2.56.0
+

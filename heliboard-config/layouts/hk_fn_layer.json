@@ -1,0 +1,349 @@
+[
+ [
+  {
+   "label": "voice",
+   "width": 0.10714285714285714,
+   "type": "function"
+  },
+  {
+   "label": "F1",
+   "code": -10028,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "F2",
+   "code": -10029,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "F3",
+   "code": -10030,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "F4",
+   "code": -10031,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "7",
+   "width": 0.08035714
+  },
+  {
+   "label": "8",
+   "width": 0.08035714
+  },
+  {
+   "label": "9",
+   "width": 0.08035714
+  },
+  {
+   "label": "/",
+   "width": 0.08035714
+  },
+  {
+   "label": "Home",
+   "code": -27,
+   "width": 0.10714285714285714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "delete",
+   "width": 0.14285714285714285
+  }
+ ],
+ [
+  {
+   "label": "tab",
+   "width": 0.10714285714285714,
+   "popup": {
+    "relevant": [
+     {
+      "label": "settings"
+     }
+    ]
+   }
+  },
+  {
+   "label": "F5",
+   "code": -10032,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "F6",
+   "code": -10033,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "F7",
+   "code": -10034,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "F8",
+   "code": -10035,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "4",
+   "width": 0.08035714
+  },
+  {
+   "label": "5",
+   "width": 0.08035714
+  },
+  {
+   "label": "6",
+   "width": 0.08035714
+  },
+  {
+   "label": "*",
+   "width": 0.08035714
+  },
+  {
+   "label": "End",
+   "code": -28,
+   "width": 0.10714285714285714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "Ins",
+   "code": -10018,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "Del",
+   "code": 0,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  }
+ ],
+ [
+  {
+   "label": "Ctrl",
+   "code": -10044,
+   "width": 0.10714285714285714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "F9",
+   "code": -10036,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "F10",
+   "code": -10037,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "F11",
+   "code": -10038,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "F12",
+   "code": -10039,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "1",
+   "width": 0.08035714
+  },
+  {
+   "label": "2",
+   "width": 0.08035714
+  },
+  {
+   "label": "3",
+   "width": 0.08035714
+  },
+  {
+   "label": "-",
+   "width": 0.08035714
+  },
+  {
+   "label": "PgUp",
+   "code": -10010,
+   "width": 0.10714285714285714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "action",
+   "width": 0.14285714285714285,
+   "labelFlags": 1073741824
+  }
+ ],
+ [
+  {
+   "label": "shift",
+   "width": 0.10714285714285714
+  },
+  {
+   "label": "SyRq",
+   "code": 0,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "ScrL",
+   "code": 0,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "Brk",
+   "code": 0,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "NumL",
+   "code": 0,
+   "width": 0.08035714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "0",
+   "width": 0.08035714
+  },
+  {
+   "label": ",",
+   "width": 0.08035714
+  },
+  {
+   "label": ".",
+   "width": 0.08035714
+  },
+  {
+   "label": "+",
+   "width": 0.08035714
+  },
+  {
+   "label": "PgDn",
+   "code": -10011,
+   "width": 0.10714285714285714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "△",
+   "code": -23,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "shift",
+   "width": 0.07142857142857142
+  }
+ ],
+ [
+  {
+   "label": "Esc",
+   "code": -10017,
+   "width": 0.10714285714285714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "settings",
+   "width": 0.07142857142857142,
+   "type": "function",
+   "popup": {
+    "relevant": [
+     {
+      "label": "voice"
+     }
+    ]
+   }
+  },
+  {
+   "label": "Alt",
+   "code": -10046,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "❖",
+   "code": -10048,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "space",
+   "width": 0.3214285714285714
+  },
+  {
+   "label": "Fn",
+   "code": -201,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "○",
+   "code": 0,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "◁",
+   "code": -21,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "▽",
+   "code": -24,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "▷",
+   "code": -22,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  }
+ ]
+]

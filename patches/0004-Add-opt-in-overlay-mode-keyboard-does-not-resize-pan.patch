@@ -1,0 +1,120 @@
+From 8a07412cfbd194a744e79c93ed24946cce86bbd1 Mon Sep 17 00:00:00 2001
+From: Bluscream <bluscream@users.noreply.github.com>
+Date: Thu, 12 Nov 2026 11:28:13 +0100
+Subject: [PATCH 4/4] Add opt-in overlay mode: keyboard does not resize/pan the
+ app
+
+When enabled (Appearance > Overlay keyboard, don't resize app), report
+contentTopInsets/visibleTopInsets at the bottom of the input view, like the
+floating keyboard does, so the app keeps its full height and stays visible
+through a translucent keyboard background. The touchable region still
+covers only the keyboard.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+---
+ .../java/helium314/keyboard/keyboard/KeyboardSwitcher.kt     | 5 +++++
+ .../main/java/helium314/keyboard/latin/settings/Defaults.kt  | 1 +
+ .../java/helium314/keyboard/latin/settings/Settings.java     | 1 +
+ .../helium314/keyboard/latin/settings/SettingsValues.java    | 2 ++
+ .../helium314/keyboard/settings/screens/AppearanceScreen.kt  | 4 ++++
+ app/src/main/res/values/strings.xml                          | 2 ++
+ 6 files changed, 15 insertions(+)
+
+diff --git a/app/src/main/java/helium314/keyboard/keyboard/KeyboardSwitcher.kt b/app/src/main/java/helium314/keyboard/keyboard/KeyboardSwitcher.kt
+index 48262d5..1399a0b 100644
+--- a/app/src/main/java/helium314/keyboard/keyboard/KeyboardSwitcher.kt
++++ b/app/src/main/java/helium314/keyboard/keyboard/KeyboardSwitcher.kt
+@@ -256,6 +256,11 @@ class KeyboardSwitcher private constructor() {
+         // Has to be subtracted after calculating touchableRegion
+         visibleTopY -= latinIME.emojiSearchActivityHeight
+ 
++        // Overlay mode (like a floating keyboard): report no content/visible inset so the app is not
++        // resized or panned and stays visible through a translucent keyboard; touches still only
++        // hit the key area via touchableRegion set above.
++        if (Settings.getValues().mOverlayKeyboard)
++            visibleTopY = inputHeight
+         outInsets.contentTopInsets = visibleTopY
+         outInsets.visibleTopInsets = visibleTopY
+         insetsUpdater.setInsets(outInsets, inputView.root)
+diff --git a/app/src/main/java/helium314/keyboard/latin/settings/Defaults.kt b/app/src/main/java/helium314/keyboard/latin/settings/Defaults.kt
+index ae25420..cdeb43d 100644
+--- a/app/src/main/java/helium314/keyboard/latin/settings/Defaults.kt
++++ b/app/src/main/java/helium314/keyboard/latin/settings/Defaults.kt
+@@ -168,6 +168,7 @@ object Defaults {
+     const val PREF_ADD_TO_PERSONAL_DICTIONARY = false
+     @JvmField
+     val PREF_NAVBAR_COLOR = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q
++    const val PREF_OVERLAY_KEYBOARD = false
+     const val PREF_ENABLED_SUBTYPES = ""
+     const val PREF_SELECTED_SUBTYPE = ""
+     const val PREF_URL_DETECTION = false
+diff --git a/app/src/main/java/helium314/keyboard/latin/settings/Settings.java b/app/src/main/java/helium314/keyboard/latin/settings/Settings.java
+index d3839b3..4001f8e 100644
+--- a/app/src/main/java/helium314/keyboard/latin/settings/Settings.java
++++ b/app/src/main/java/helium314/keyboard/latin/settings/Settings.java
+@@ -177,6 +177,7 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
+ 
+     public static final String PREF_ADD_TO_PERSONAL_DICTIONARY = "add_to_personal_dictionary";
+     public static final String PREF_NAVBAR_COLOR = "navbar_color";
++    public static final String PREF_OVERLAY_KEYBOARD = "overlay_keyboard";
+     public static final String PREF_ENABLED_SUBTYPES = "enabled_subtypes";
+     public static final String PREF_SELECTED_SUBTYPE = "selected_subtype";
+     public static final String PREF_URL_DETECTION = "url_detection";
+diff --git a/app/src/main/java/helium314/keyboard/latin/settings/SettingsValues.java b/app/src/main/java/helium314/keyboard/latin/settings/SettingsValues.java
+index c19e624..6cfe2c6 100644
+--- a/app/src/main/java/helium314/keyboard/latin/settings/SettingsValues.java
++++ b/app/src/main/java/helium314/keyboard/latin/settings/SettingsValues.java
+@@ -124,6 +124,7 @@ public class SettingsValues {
+     public final boolean mUseContactsDictionary;
+     public final boolean mUseAppsDictionary;
+     public final boolean mCustomNavBarColor;
++    public final boolean mOverlayKeyboard;
+     public final float mKeyboardHeightScale;
+     public final float mBottomRowScale;
+     public final boolean mUrlDetectionEnabled;
+@@ -312,6 +313,7 @@ public class SettingsValues {
+         mUseContactsDictionary = SettingsValues.readUseContactsEnabled(prefs, context);
+         mUseAppsDictionary = prefs.getBoolean(Settings.PREF_USE_APPS, Defaults.PREF_USE_APPS);
+         mCustomNavBarColor = prefs.getBoolean(Settings.PREF_NAVBAR_COLOR, Defaults.PREF_NAVBAR_COLOR);
++        mOverlayKeyboard = prefs.getBoolean(Settings.PREF_OVERLAY_KEYBOARD, Defaults.PREF_OVERLAY_KEYBOARD);
+         mKeyGapScale = Settings.readKeyGapScale(prefs, isLandscape, isFolded);
+         mSettingsValuesForSuggestion = new SettingsValuesForSuggestion(
+                 mBlockPotentiallyOffensive,
+diff --git a/app/src/main/java/helium314/keyboard/settings/screens/AppearanceScreen.kt b/app/src/main/java/helium314/keyboard/settings/screens/AppearanceScreen.kt
+index beb762f..3332994 100644
+--- a/app/src/main/java/helium314/keyboard/settings/screens/AppearanceScreen.kt
++++ b/app/src/main/java/helium314/keyboard/settings/screens/AppearanceScreen.kt
+@@ -68,6 +68,7 @@ fun AppearanceScreen(
+         Settings.PREF_THEME_COLORS,
+         if (dayNightMode) Settings.PREF_THEME_COLORS_NIGHT else null,
+         Settings.PREF_NAVBAR_COLOR,
++        Settings.PREF_OVERLAY_KEYBOARD,
+         SettingsWithoutKey.BACKGROUND_IMAGE,
+         SettingsWithoutKey.BACKGROUND_IMAGE_LANDSCAPE,
+         R.string.settings_category_miscellaneous,
+@@ -203,6 +204,9 @@ fun createAppearanceSettings(context: Context) = listOf(
+     Setting(context, Settings.PREF_NAVBAR_COLOR, R.string.theme_navbar, R.string.day_night_mode_summary) {
+         SwitchPreference(it, Defaults.PREF_NAVBAR_COLOR)
+     },
++    Setting(context, Settings.PREF_OVERLAY_KEYBOARD, R.string.overlay_keyboard, R.string.overlay_keyboard_summary) {
++        SwitchPreference(it, Defaults.PREF_OVERLAY_KEYBOARD)
++    },
+     Setting(context, SettingsWithoutKey.BACKGROUND_IMAGE, R.string.customize_background_image) {
+         BackgroundImagePref(it, false)
+     },
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+index 41445eb..18888f8 100644
+--- a/app/src/main/res/values/strings.xml
++++ b/app/src/main/res/values/strings.xml
+@@ -727,6 +727,8 @@ New dictionary:
+     <string name="day_night_mode_summary">Appearance will follow system settings</string>
+     <!-- Option for setting navbar to follow keyboard color -->
+     <string name="theme_navbar">Color navigation bar</string>
++    <string name="overlay_keyboard">Overlay keyboard, don\'t resize app</string>
++    <string name="overlay_keyboard_summary">The app keeps its full height and shows through a transparent keyboard background. The focused text field may end up under the keyboard.</string>
+     <!-- Theme name for light theme -->
+     <string name="theme_name_light" tools:keep="@string/theme_name_light">Light</string>
+     <!-- Theme name for holo white theme -->
+-- 
+2.56.0
+
