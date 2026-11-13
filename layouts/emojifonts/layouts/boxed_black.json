@@ -1,0 +1,136 @@
+[
+ [
+  {
+   "label": "🆀",
+   "popup": {
+    "main": {
+     "label": "1"
+    }
+   }
+  },
+  {
+   "label": "🆆",
+   "popup": {
+    "main": {
+     "label": "2"
+    }
+   }
+  },
+  {
+   "label": "🅴",
+   "popup": {
+    "main": {
+     "label": "3"
+    }
+   }
+  },
+  {
+   "label": "🆁",
+   "popup": {
+    "main": {
+     "label": "4"
+    }
+   }
+  },
+  {
+   "label": "🆃",
+   "popup": {
+    "main": {
+     "label": "5"
+    }
+   }
+  },
+  {
+   "label": "🆈",
+   "popup": {
+    "main": {
+     "label": "6"
+    }
+   }
+  },
+  {
+   "label": "🆄",
+   "popup": {
+    "main": {
+     "label": "7"
+    }
+   }
+  },
+  {
+   "label": "🅸",
+   "popup": {
+    "main": {
+     "label": "8"
+    }
+   }
+  },
+  {
+   "label": "🅾",
+   "popup": {
+    "main": {
+     "label": "9"
+    }
+   }
+  },
+  {
+   "label": "🅿",
+   "popup": {
+    "main": {
+     "label": "0"
+    }
+   }
+  }
+ ],
+ [
+  {
+   "label": "🅰"
+  },
+  {
+   "label": "🆂"
+  },
+  {
+   "label": "🅳"
+  },
+  {
+   "label": "🅵"
+  },
+  {
+   "label": "🅶"
+  },
+  {
+   "label": "🅷"
+  },
+  {
+   "label": "🅹"
+  },
+  {
+   "label": "🅺"
+  },
+  {
+   "label": "🅻"
+  }
+ ],
+ [
+  {
+   "label": "🆉"
+  },
+  {
+   "label": "🆇"
+  },
+  {
+   "label": "🅲"
+  },
+  {
+   "label": "🆅"
+  },
+  {
+   "label": "🅱"
+  },
+  {
+   "label": "🅽"
+  },
+  {
+   "label": "🅼"
+  }
+ ]
+]

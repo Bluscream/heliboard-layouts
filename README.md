@@ -13,9 +13,18 @@ Full 5-row German PC QWERTZ layout replicating [Hacker's Keyboard](https://githu
 
 Available in two versions:
 - **`HackersKeyboardLayoutClassic`:** Exact 1:1 replica of Hacker's Keyboard keys and popups.
-- **`HackersKeyboardLayoutEnhanced`:** Adds an emoji picker on long-press of `.` (`Win + .` convention) and common text emotes (`qwq`, `twt`, `lol`, `rofl`, `uwu`, `:3`, etc.) on letter long-presses.
+- **`HackersKeyboardLayoutEnhanced`:** Adds an emoji picker on long-press of `.` (`Win + .` convention), common text emotes (`qwq`, `twt`, `lol`, `rofl`, `uwu`, `:3`), and styled Unicode font characters (`🅰`, `🄰`, `🅐`, `Ⓐ`, `🇦`) on letter long-presses.
 
 👉 [See Hacker's Keyboard layout details and downloads](layouts/hackerskeyboard/)
+
+### 🔤 [Emoji & Styled Font Layouts](layouts/emojifonts/)
+Direct typing layouts for styled Unicode typography, regional indicator flags (`🇦 🇧 🇨`), boxed/squared (`🅰 🅱 🅲` / `🄰 🄱 🄲`), circled (`🅐 🅑 🅒` / `Ⓐ Ⓑ Ⓒ`), and double-struck math letters (`𝔸 𝔹 ℂ` / `𝕒 𝕓 𝕔`).
+
+Includes:
+- Standalone 3-row layout JSON files with matching styled number popups.
+- Ready-to-restore backup packages (`EmojiFontsLayouts.zip`).
+
+👉 [See Emoji & Styled Font layouts and downloads](layouts/emojifonts/)
 
 ---
 
