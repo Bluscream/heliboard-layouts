@@ -1,0 +1,138 @@
+[
+ [
+  {
+   "type": "placeholder"
+  },
+  {
+   "label": "delete",
+   "width": 0.097142855
+  }
+ ],
+ [
+  {
+   "label": "tab",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "settings"
+     }
+    ]
+   }
+  },
+  {
+   "type": "placeholder"
+  }
+ ],
+ [
+  {
+   "label": "Ctrl",
+   "code": -10044,
+   "width": 0.10714285714285714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "type": "placeholder"
+  },
+  {
+   "label": "action",
+   "width": 0.10714285714285714,
+   "labelFlags": 1073741824
+  }
+ ],
+ [
+  {
+   "label": "shift",
+   "width": 0.07142857142857142
+  },
+  {
+   "type": "placeholder"
+  },
+  {
+   "label": "△",
+   "code": -23,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "shift",
+   "width": 0.07142857142857142
+  }
+ ],
+ [
+  {
+   "label": "Esc",
+   "code": -10017,
+   "width": 0.10714285714285714,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "settings",
+   "width": 0.07142857142857142,
+   "type": "function",
+   "popup": {
+    "relevant": [
+     {
+      "label": "voice"
+     }
+    ]
+   }
+  },
+  {
+   "label": "Alt",
+   "code": -10046,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "❖",
+   "code": -10048,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "space",
+   "width": 0.3214285714285714
+  },
+  {
+   "label": "Fn",
+   "code": -205,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "○",
+   "code": 0,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "◁",
+   "code": -21,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "▽",
+   "code": -24,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  },
+  {
+   "label": "▷",
+   "code": -22,
+   "width": 0.07142857142857142,
+   "type": "function",
+   "labelFlags": 65536
+  }
+ ]
+]

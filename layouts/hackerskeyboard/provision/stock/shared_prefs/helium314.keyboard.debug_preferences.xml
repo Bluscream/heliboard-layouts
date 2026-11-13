@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="theme_auto_day_night" value="false" />
+    <boolean name="theme_key_borders" value="true" />
+    <boolean name="show_hints" value="true" />
+    <boolean name="show_number_row" value="false" />
+    <boolean name="show_popup_hints" value="false" />
+    <boolean name="popup_on" value="false" />
+    <boolean name="auto_cap" value="true" />
+    <boolean name="auto_correction" value="false" />
+    <boolean name="show_suggestions" value="false" />
+    <boolean name="gesture_input" value="false" />
+    <boolean name="show_emoji_key" value="false" />
+    <boolean name="show_language_switch_key" value="false" />
+    <boolean name="abc_after_numpad_space" value="false" />
+    <boolean name="vibrate_on" value="true" />
+    <boolean name="sound_on" value="true" />
+    <boolean name="navbar_color" value="true" />
+    <int name="version_code" value="4300" />
+    <int name="user_more_colors_HK Transparent" value="2" />
+    <float name="keyboard_height_scale_true_false" value="1.26" />
+    <float name="keyboard_height_scale_false_false" value="1.0" />
+    <float name="bottom_padding_scale_true_false" value="0.0" />
+    <float name="bottom_padding_scale_false_false" value="0.0" />
+    <float name="font_scale" value="1.5" />
+    <float name="hint_font_scale" value="1.35" />
+    <string name="theme_style">Material</string>
+    <string name="icon_style">Material</string>
+    <string name="theme_colors">HK Transparent</string>
+    <string name="theme_colors_night">HK Transparent</string>
+    <string name="user_all_colors_HK Transparent">MAIN_BACKGROUND,-671088640;KEY_BACKGROUND,184549375;FUNCTIONAL_KEY_BACKGROUND,184549375;SPACE_BAR_BACKGROUND,184549375;ACTION_KEY_BACKGROUND,184549375;ACTION_KEY_POPUP_KEYS_BACKGROUND,-266330080;KEY_TEXT,-1;FUNCTIONAL_KEY_TEXT,-1;KEY_ICON,-1;SHIFT_KEY_ICON,-1;ACTION_KEY_ICON,-1;KEY_HINT_TEXT,-2236963;SPACE_BAR_TEXT,-1;KEY_PREVIEW_BACKGROUND,-266330080;KEY_PREVIEW_TEXT,-1;POPUP_KEYS_BACKGROUND,-266330080;POPUP_KEY_TEXT,-1;POPUP_KEY_ICON,-1;STRIP_BACKGROUND,-1073741824;NAVIGATION_BAR,-16777216;GESTURE_TRAIL,-13388315;GESTURE_PREVIEW,-266330080;TOOL_BAR_KEY,-1;TOOL_BAR_EXPAND_KEY,-1;SUGGESTED_WORD,-1;SUGGESTION_TYPED_WORD,-1;SUGGESTION_VALID_WORD,-1;SUGGESTION_AUTO_CORRECT,-13388315;MORE_SUGGESTIONS_BACKGROUND,-266330080</string>
+    <string name="user_colors_HK Transparent">[]</string>
+    <string name="additional_subtypes">de§AsciiCapable,EmojiCapable,KeyboardLayoutSet=MAIN:custom.Latn.16r1k9s776y9ykhbv0n79l5wxyex5w.,SupportTouchPositionCorrection,isAdditionalSubtype</string>
+    <string name="enabled_subtypes">de§AsciiCapable,EmojiCapable,KeyboardLayoutSet=MAIN:custom.Latn.16r1k9s776y9ykhbv0n79l5wxyex5w.,SupportTouchPositionCorrection,isAdditionalSubtype</string>
+    <string name="selected_subtype">de§AsciiCapable,EmojiCapable,KeyboardLayoutSet=MAIN:custom.Latn.16r1k9s776y9ykhbv0n79l5wxyex5w.,SupportTouchPositionCorrection,isAdditionalSubtype</string>
+    <string name="layout_FUNCTIONAL">custom.ffb2mbs04cpxc44jncdo.</string>
+    <string name="layout_NUMPAD">custom.azbxbeel4ac72n1iq.</string>
+    <string name="layout_NUMPAD_LANDSCAPE">custom.azbxbeel4ac72n1iq.</string>
+    <string name="popup_keys_order">layout:true|language_priority:true|language:true|number:false|symbols:false</string>
+    <string name="popup_keys_labels_order">layout:true|language_priority:false|language:false|number:false|symbols:false</string>
+    <string name="toolbar_mode">HIDDEN</string>
+</map>

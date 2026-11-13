@@ -17,7 +17,7 @@ from pathlib import Path
 from xml.sax.saxutils import quoteattr
 
 ROOT = Path(__file__).resolve().parent.parent
-CFG = ROOT / "heliboard-config"
+CFG = ROOT
 LAYOUTS = CFG / "layouts"
 THEME = "HK Transparent"
 VERSION_CODE = 4300  # HeliBoard 4.3-beta1; avoids re-running upgrade migrations on restore

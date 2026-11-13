@@ -18,7 +18,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parent.parent / "heliboard-config" / "layouts"
+OUT = Path(__file__).resolve().parent.parent / "layouts"
 
 # HeliBoard key codes (app/.../keyboard_parser/floris/KeyCode.kt)
 CTRL_LEFT, ALT_LEFT, META_LEFT = -10044, -10046, -10048
