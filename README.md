@@ -33,9 +33,9 @@ Overlay mode in the patched build: the app keeps its full height and shows throu
 
 ## Versions
 
-This repository provides two layout configurations:
-- **`HackersKeyboardLayoutClassic`:** Exact 1:1 replica of Hacker's Keyboard (German 5-row PC layout, original long-press alternates, hints and popups).
-- **`HackersKeyboardLayoutEnhanced`:** Modernized layout incorporating:
+This repository provides two layout configurations for the patched HeliBoard build:
+- **`HackersKeyboardLayoutClassic` (`HackersKeyboardLayoutClassic.zip`):** Exact 1:1 replica of Hacker's Keyboard (German 5-row PC layout, original long-press alternates, hints and popups).
+- **`HackersKeyboardLayoutEnhanced` (`HackersKeyboardLayoutEnhanced.zip`):** Modernized layout incorporating:
   - **Emoji key:** integrated into long-press of `.` (period), following the PC `Win + .` convention.
   - **Common text emotes & emoticons:** on long-press of their initial letters (e.g. `q` -> `q.q`, `qwq`; `t` -> `t.t`, `twt`; `l` -> `lol`, `lmao`, `lmfao`; `r` -> `rofl`; `w` -> `owo`, `^w^`; `u` -> `uwu`; `e` -> `^^`, `xd`; `c` -> `:3`, matching case with Shift/Caps).
 
@@ -43,10 +43,8 @@ This repository provides two layout configurations:
 
 | File | What |
 | :--- | :--- |
-| `heliboard-config/heliboard-hk-backup-enhanced-stock.zip` | Full backup with **Enhanced** layout for stock HeliBoard |
-| `heliboard-config/heliboard-hk-backup-enhanced-patched.zip` | Full backup with **Enhanced** layout for patched build (overlay mode, glow, bold labels) |
-| `heliboard-config/heliboard-hk-backup-classic-stock.zip` | Full backup with **Classic** layout for stock HeliBoard |
-| `heliboard-config/heliboard-hk-backup-classic-patched.zip` | Full backup with **Classic** layout for patched build |
+| `heliboard-config/HackersKeyboardLayoutEnhanced.zip` | Full backup with **Enhanced** layout (overlay mode, cyan glow, bold labels, emoji & emotes) |
+| `heliboard-config/HackersKeyboardLayoutClassic.zip` | Full backup with **Classic** layout (overlay mode, cyan glow, bold labels, exact HK keys) |
 | `heliboard-config/layouts/hk_de_main_enhanced.json` | Enhanced main layout (emoji on `.`, text emotes on letter long-press) |
 | `heliboard-config/layouts/hk_de_main_classic.json` | Classic main layout (exact Hacker's Keyboard long-press popups) |
 | `heliboard-config/layouts/hk_functional.json` | Functional keys: Tab, Ctrl, Shift, ↑, Backspace, Enter, and the bottom row (Esc, settings/mic, Alt, ❖, Space, Fn, ○, ◁ ▽ ▷) |

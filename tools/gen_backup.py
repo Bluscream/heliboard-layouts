@@ -2,19 +2,16 @@
 """Build HeliBoard settings backups (Settings > Advanced > Backup and restore > Restore) that set up
 the Hacker's Keyboard look-alike: custom layouts, transparent colour theme, hint/popup options.
 
-Also writes the equivalent SharedPreferences XML + file tree, used to provision Waydroid directly.
+Builds two versions:
+  HackersKeyboardLayoutClassic.zip
+  HackersKeyboardLayoutEnhanced.zip
 
-Usage: gen_backup.py [--height-landscape F] [--height-portrait F]
-Outputs (heliboard-config/):
-  heliboard-hk-backup-stock.zip    for the stock HeliBoard release
-  heliboard-hk-backup-patched.zip  for the patched build (glow, overlay, extra key codes)
-  provision/<variant>/...          shared_prefs XML + files/ tree (test provisioning only)
+Also writes the equivalent SharedPreferences XML + file tree, used to provision Waydroid directly.
 """
 from __future__ import annotations
 
 import argparse
 import json
-import shutil
 import zipfile
 from pathlib import Path
 from xml.sax.saxutils import quoteattr
@@ -27,7 +24,7 @@ VERSION_CODE = 4300  # HeliBoard 4.3-beta1; avoids re-running upgrade migrations
 
 
 def b36(name: str) -> str:
-    n = int.from_bytes(name.encode(), "big")  # == BigInteger(bytes).toString(36) for positive values
+    n = int.from_bytes(name.encode(), "big")
     digits = "0123456789abcdefghijklmnopqrstuvwxyz"
     out = ""
     while n:
@@ -38,7 +35,6 @@ def b36(name: str) -> str:
 
 CLASSIC_MAIN_NAME = f"custom.Latn.{b36('HK Deutsch Classic')}."
 ENHANCED_MAIN_NAME = f"custom.Latn.{b36('HK Deutsch Enhanced')}."
-DEFAULT_MAIN_NAME = f"custom.Latn.{b36('HK Deutsch')}."
 FUNC_NAME = f"custom.{b36('HK functional')}."
 FN_NAME = f"custom.{b36('HK Fn layer')}."
 
@@ -48,14 +44,14 @@ def argb(hex_str: str) -> int:
     return v - (1 << 32) if v >= 1 << 31 else v
 
 
-COLORS = {  # ColorType -> #AARRGGBB, after Hacker's Keyboard res/layout/input_trans_neon.xml
-    "MAIN_BACKGROUND": "D8000000",  # android:background="#c0000000"
-    "KEY_BACKGROUND": "0AFFFFFF",  # btn_keyboard_key_ics drawn with backgroundAlpha 32
+COLORS = {
+    "MAIN_BACKGROUND": "D8000000",
+    "KEY_BACKGROUND": "0AFFFFFF",
     "FUNCTIONAL_KEY_BACKGROUND": "0AFFFFFF",
     "SPACE_BAR_BACKGROUND": "0AFFFFFF",
     "ACTION_KEY_BACKGROUND": "0AFFFFFF",
     "ACTION_KEY_POPUP_KEYS_BACKGROUND": "F0202020",
-    "KEY_TEXT": "FFFFFFFF",  # keyTextColor
+    "KEY_TEXT": "FFFFFFFF",
     "FUNCTIONAL_KEY_TEXT": "FFFFFFFF",
     "KEY_ICON": "FFFFFFFF",
     "SHIFT_KEY_ICON": "FFFFFFFF",
@@ -81,7 +77,7 @@ COLORS = {  # ColorType -> #AARRGGBB, after Hacker's Keyboard res/layout/input_t
 }
 
 
-def prefs(patched: bool, main_name: str, h_land: float, h_port: float, font: float) -> dict[str, dict]:
+def prefs(main_name: str, h_land: float, h_port: float, font: float) -> dict[str, dict]:
     subtype = "de§" + ",".join(sorted([
         "AsciiCapable", "EmojiCapable", "SupportTouchPositionCorrection", "isAdditionalSubtype",
         f"KeyboardLayoutSet=MAIN:{main_name}",
@@ -109,7 +105,7 @@ def prefs(patched: bool, main_name: str, h_land: float, h_port: float, font: flo
         "show_hints": True,
         "show_number_row": False,
         "show_popup_hints": False,
-        "popup_on": False,  # HK: popup_on=false (no key press preview)
+        "popup_on": False,
         "auto_cap": True,
         "auto_correction": False,
         "show_suggestions": False,
@@ -120,8 +116,15 @@ def prefs(patched: bool, main_name: str, h_land: float, h_port: float, font: flo
         "vibrate_on": True,
         "sound_on": True,
         "navbar_color": True,
+        "overlay_keyboard": True,
+        "key_text_bold": True,
     }
-    ints = {"version_code": VERSION_CODE, f"user_more_colors_{THEME}": 2}
+    ints = {
+        "version_code": VERSION_CODE,
+        f"user_more_colors_{THEME}": 2,
+        "key_text_glow_radius_dp": 8,
+        "key_text_glow_color": argb("FF33B5E5"),
+    }
     floats = {
         "keyboard_height_scale_true_false": h_land,
         "keyboard_height_scale_false_false": h_port,
@@ -130,21 +133,15 @@ def prefs(patched: bool, main_name: str, h_land: float, h_port: float, font: flo
         "font_scale": font,
         "hint_font_scale": 1.35,
     }
-    if patched:
-        booleans["overlay_keyboard"] = True
-        booleans["key_text_bold"] = True
-        ints["key_text_glow_radius_dp"] = 8
-        ints["key_text_glow_color"] = argb("FF33B5E5")
     return {"boolean": booleans, "int": ints, "float": floats, "string": strings}
 
 
-def layout_files(patched: bool, variant_name: str, main_id: str) -> dict[str, Path]:
-    sfx = "_patched" if patched else ""
-    fn = LAYOUTS / f"hk_fn_layer{sfx}.json"
+def layout_files(variant_name: str, main_id: str) -> dict[str, Path]:
+    fn = LAYOUTS / "hk_fn_layer_patched.json"
     main_src = LAYOUTS / f"hk_de_main_{variant_name}.json"
     return {
         f"layouts/main/{main_id}json": main_src,
-        f"layouts/functional/{FUNC_NAME}json": LAYOUTS / f"hk_functional{sfx}.json",
+        f"layouts/functional/{FUNC_NAME}json": LAYOUTS / "hk_functional_patched.json",
         f"layouts/numpad/{FN_NAME}json": fn,
         f"layouts/numpad_landscape/{FN_NAME}json": fn,
     }
@@ -181,31 +178,32 @@ def main() -> None:
     ap.add_argument("--font-scale", type=float, default=1.0)
     a = ap.parse_args()
 
-    for variant in ("classic", "enhanced"):
-        main_id = CLASSIC_MAIN_NAME if variant == "classic" else ENHANCED_MAIN_NAME
-        for patched in (False, True):
-            patch_str = "patched" if patched else "stock"
-            p = prefs(patched, main_id, a.height_landscape, a.height_portrait, a.font_scale)
-            files = layout_files(patched, variant, main_id)
-            zpath = CFG / f"heliboard-hk-backup-{variant}-{patch_str}.zip"
-            with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as z:
-                for name, src in files.items():
-                    z.write(src, "unprotected/" + name)
-                z.writestr("preferences.json", prefs_json(p))
-            print("wrote", zpath)
+    for old in CFG.glob("*.zip"):
+        old.unlink()
 
-            if variant == "enhanced":
-                legacy_zpath = CFG / f"heliboard-hk-backup-{patch_str}.zip"
-                shutil.copy2(zpath, legacy_zpath)
-                print("copied to", legacy_zpath)
+    variants = [
+        ("classic", CLASSIC_MAIN_NAME, "HackersKeyboardLayoutClassic.zip"),
+        ("enhanced", ENHANCED_MAIN_NAME, "HackersKeyboardLayoutEnhanced.zip"),
+    ]
 
-                prov = CFG / "provision" / patch_str
-                for name, src in files.items():
-                    dst = prov / "files" / name
-                    dst.parent.mkdir(parents=True, exist_ok=True)
-                    dst.write_bytes(src.read_bytes())
-                (prov / "shared_prefs").mkdir(parents=True, exist_ok=True)
-                (prov / "shared_prefs" / "helium314.keyboard.debug_preferences.xml").write_text(prefs_xml(p), encoding="utf-8")
+    for variant, main_id, zip_name in variants:
+        p = prefs(main_id, a.height_landscape, a.height_portrait, a.font_scale)
+        files = layout_files(variant, main_id)
+        zpath = CFG / zip_name
+        with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as z:
+            for name, src in files.items():
+                z.write(src, "unprotected/" + name)
+            z.writestr("preferences.json", prefs_json(p))
+        print("wrote", zpath)
+
+        if variant == "enhanced":
+            prov = CFG / "provision"
+            for name, src in files.items():
+                dst = prov / "files" / name
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                dst.write_bytes(src.read_bytes())
+            (prov / "shared_prefs").mkdir(parents=True, exist_ok=True)
+            (prov / "shared_prefs" / "helium314.keyboard.debug_preferences.xml").write_text(prefs_xml(p), encoding="utf-8")
 
 
 if __name__ == "__main__":
