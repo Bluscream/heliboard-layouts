@@ -8,23 +8,10 @@ For full features (such as transparent overlay mode, glowing bold text, and extr
 
 ## Available Layouts
 
-### ⌨️ [Hacker's Keyboard Layout](layouts/hackerskeyboard/)
-Full 5-row German PC QWERTZ layout replicating [Hacker's Keyboard](https://github.com/klausw/hackerskeyboard) with dedicated arrow keys, Esc, Tab, Ctrl, Alt, ❖ (Meta), an Fn layer with F1–F12 & numpad, and the transparent neon theme.
-
-Available in two versions:
-- **`HackersKeyboardLayoutClassic`:** Exact 1:1 replica of Hacker's Keyboard keys and popups.
-- **`HackersKeyboardLayoutEnhanced`:** Adds an emoji picker on long-press of `.` (`Win + .` convention), common text emotes (`qwq`, `twt`, `lol`, `rofl`, `uwu`, `:3`), and styled Unicode font characters (`🅰`, `🄰`, `🅐`, `Ⓐ`, `🇦`) on letter long-presses.
-
-👉 [See Hacker's Keyboard layout details and downloads](layouts/hackerskeyboard/)
-
-### 🔤 [Emoji & Styled Font Layouts](layouts/emojifonts/)
-Direct typing layouts for styled Unicode typography, regional indicator flags (`🇦 🇧 🇨`), boxed/squared (`🅰 🅱 🅲` / `🄰 🄱 🄲`), circled (`🅐 🅑 🅒` / `Ⓐ Ⓑ Ⓒ`), and double-struck math letters (`𝔸 𝔹 ℂ` / `𝕒 𝕓 𝕔`).
-
-Includes:
-- Standalone 3-row layout JSON files with matching styled number popups.
-- Ready-to-restore backup packages (`EmojiFontsLayouts.zip`).
-
-👉 [See Emoji & Styled Font layouts and downloads](layouts/emojifonts/)
+| Preview | Layout | Description | Downloads & Links |
+| :---: | :--- | :--- | :--- |
+| [<img src="layouts/hackerskeyboard/images/heliboard_patched_main.png" width="340" alt="Hacker's Keyboard Layout">](layouts/hackerskeyboard/) | [**Hacker's Keyboard**](layouts/hackerskeyboard/)<br>*(German QWERTZ)* | Full 5-row PC layout replicating [Hacker's Keyboard](https://github.com/klausw/hackerskeyboard):<br>&bull; Dedicated arrow keys, Esc, Tab, Ctrl, Alt, ❖ (Meta)<br>&bull; Fn layer with F1–F12 & full numeric numpad<br>&bull; Transparent dark neon theme<br>&bull; **Classic:** 1:1 original key & popup mapping<br>&bull; **Enhanced:** Adds emoji picker (`Win + .`), text emotes, and styled font long-press popups | 📖 [Documentation](layouts/hackerskeyboard/)<br>💾 [Classic (.zip)](layouts/hackerskeyboard/HackersKeyboardLayoutClassic.zip)<br>💾 [Enhanced (.zip)](layouts/hackerskeyboard/HackersKeyboardLayoutEnhanced.zip)<br>📂 [Layout JSONs](layouts/hackerskeyboard/layouts/) |
+| [<img src="layouts/emojifonts/images/emojifonts_showcase.png" width="340" alt="Emoji & Styled Fonts Layouts">](layouts/emojifonts/) | [**Emoji & Styled Fonts**](layouts/emojifonts/)<br>*(Unicode Typography)* | Direct-typing keyboard layouts for decorative Unicode typography & emoji from [FontKeyboard](https://github.com/Bluscream/FontKeyboard):<br>&bull; **Emoji Regional:** 🇦 🇧 🇨 &bull; 0️⃣ 1️⃣ 2️⃣<br>&bull; **Boxed Black:** 🅰 🅱 🅲<br>&bull; **Boxed Latin:** 🄰 🄱 🄲<br>&bull; **Circled Black:** 🅐 🅑 🅒<br>&bull; **Circled Latin:** Ⓐ Ⓑ Ⓒ &bull; ⓪ ① ②<br>&bull; **Double Struck:** 𝔸 𝔹 ℂ / 𝕒 𝕓 𝕔 &bull; 𝟘 𝟙 𝟚<br>&bull; Top-row long-press styled number hints | 📖 [Documentation](layouts/emojifonts/)<br>💾 [All Fonts (.zip)](layouts/emojifonts/EmojiFontsLayouts.zip)<br>📂 [Layout JSONs](layouts/emojifonts/layouts/) |
 
 ---
 

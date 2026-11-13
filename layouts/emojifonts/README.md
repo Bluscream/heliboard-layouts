@@ -2,6 +2,8 @@
 
 Custom keyboard layouts for [HeliBoard](https://github.com/HeliBorg/HeliBoard) that directly type decorative Unicode characters, regional indicator emoji flags, boxed/squared letters, circled letters, and mathematical typography from the [FontKeyboard](https://github.com/Bluscream/FontKeyboard) collection.
 
+![Emoji & Styled Fonts Showcase](images/emojifonts_showcase.png)
+
 ---
 
 ## Available Fonts
@@ -15,7 +17,13 @@ Custom keyboard layouts for [HeliBoard](https://github.com/HeliBorg/HeliBoard) t
 | **Circled** | Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ | ⓪ ① ② ③ ④ | [`layouts/circled.json`](layouts/circled.json) | [`circled.zip`](circled.zip) |
 | **Double Struck** | 𝔸 𝔹 ℂ 𝔻 𝔼 | 𝟘 𝟙 𝟚 𝟛 𝟜 | [`layouts/double_struck.json`](layouts/double_struck.json) | [`double_struck.zip`](double_struck.zip) |
 
-All 6 layouts are also bundled in a single restore package: **[`EmojiFontsLayouts.zip`](EmojiFontsLayouts.zip)**.
+All 6 layouts are bundled into a single restore package: **[`EmojiFontsLayouts.zip`](EmojiFontsLayouts.zip)**.
+
+---
+
+## Preview
+
+![Emoji Regional Keyboard Preview](images/emoji_regional_preview.png)
 
 ---
 
