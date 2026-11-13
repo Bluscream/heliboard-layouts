@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import zipfile
 from pathlib import Path
 from xml.sax.saxutils import quoteattr
@@ -35,7 +36,9 @@ def b36(name: str) -> str:
     return out
 
 
-MAIN_NAME = f"custom.Latn.{b36('HK Deutsch')}."
+CLASSIC_MAIN_NAME = f"custom.Latn.{b36('HK Deutsch Classic')}."
+ENHANCED_MAIN_NAME = f"custom.Latn.{b36('HK Deutsch Enhanced')}."
+DEFAULT_MAIN_NAME = f"custom.Latn.{b36('HK Deutsch')}."
 FUNC_NAME = f"custom.{b36('HK functional')}."
 FN_NAME = f"custom.{b36('HK Fn layer')}."
 
@@ -78,10 +81,10 @@ COLORS = {  # ColorType -> #AARRGGBB, after Hacker's Keyboard res/layout/input_t
 }
 
 
-def prefs(patched: bool, h_land: float, h_port: float, font: float) -> dict[str, dict]:
+def prefs(patched: bool, main_name: str, h_land: float, h_port: float, font: float) -> dict[str, dict]:
     subtype = "de§" + ",".join(sorted([
         "AsciiCapable", "EmojiCapable", "SupportTouchPositionCorrection", "isAdditionalSubtype",
-        f"KeyboardLayoutSet=MAIN:{MAIN_NAME}",
+        f"KeyboardLayoutSet=MAIN:{main_name}",
     ]))
     strings = {
         "theme_style": "Material",
@@ -135,11 +138,12 @@ def prefs(patched: bool, h_land: float, h_port: float, font: float) -> dict[str,
     return {"boolean": booleans, "int": ints, "float": floats, "string": strings}
 
 
-def layout_files(patched: bool) -> dict[str, Path]:
+def layout_files(patched: bool, variant_name: str, main_id: str) -> dict[str, Path]:
     sfx = "_patched" if patched else ""
     fn = LAYOUTS / f"hk_fn_layer{sfx}.json"
+    main_src = LAYOUTS / f"hk_de_main_{variant_name}.json"
     return {
-        f"layouts/main/{MAIN_NAME}json": LAYOUTS / "hk_de_main.json",
+        f"layouts/main/{main_id}json": main_src,
         f"layouts/functional/{FUNC_NAME}json": LAYOUTS / f"hk_functional{sfx}.json",
         f"layouts/numpad/{FN_NAME}json": fn,
         f"layouts/numpad_landscape/{FN_NAME}json": fn,
@@ -176,24 +180,32 @@ def main() -> None:
     ap.add_argument("--height-portrait", type=float, default=1.0)
     ap.add_argument("--font-scale", type=float, default=1.0)
     a = ap.parse_args()
-    for patched in (False, True):
-        variant = "patched" if patched else "stock"
-        p = prefs(patched, a.height_landscape, a.height_portrait, a.font_scale)
-        files = layout_files(patched)
-        zpath = CFG / f"heliboard-hk-backup-{variant}.zip"
-        with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as z:
-            for name, src in files.items():
-                # device-protected files are stored under "unprotected/" (BackupRestorePreference.kt)
-                z.write(src, "unprotected/" + name)
-            z.writestr("preferences.json", prefs_json(p))
-        prov = CFG / "provision" / variant
-        for name, src in files.items():
-            dst = prov / "files" / name
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            dst.write_bytes(src.read_bytes())
-        (prov / "shared_prefs").mkdir(parents=True, exist_ok=True)
-        (prov / "shared_prefs" / "helium314.keyboard.debug_preferences.xml").write_text(prefs_xml(p), encoding="utf-8")
-        print("wrote", zpath)
+
+    for variant in ("classic", "enhanced"):
+        main_id = CLASSIC_MAIN_NAME if variant == "classic" else ENHANCED_MAIN_NAME
+        for patched in (False, True):
+            patch_str = "patched" if patched else "stock"
+            p = prefs(patched, main_id, a.height_landscape, a.height_portrait, a.font_scale)
+            files = layout_files(patched, variant, main_id)
+            zpath = CFG / f"heliboard-hk-backup-{variant}-{patch_str}.zip"
+            with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as z:
+                for name, src in files.items():
+                    z.write(src, "unprotected/" + name)
+                z.writestr("preferences.json", prefs_json(p))
+            print("wrote", zpath)
+
+            if variant == "enhanced":
+                legacy_zpath = CFG / f"heliboard-hk-backup-{patch_str}.zip"
+                shutil.copy2(zpath, legacy_zpath)
+                print("copied to", legacy_zpath)
+
+                prov = CFG / "provision" / patch_str
+                for name, src in files.items():
+                    dst = prov / "files" / name
+                    dst.parent.mkdir(parents=True, exist_ok=True)
+                    dst.write_bytes(src.read_bytes())
+                (prov / "shared_prefs").mkdir(parents=True, exist_ok=True)
+                (prov / "shared_prefs" / "helium314.keyboard.debug_preferences.xml").write_text(prefs_xml(p), encoding="utf-8")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,1234 @@
+[
+ [
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "°",
+    "width": 0.0457142855,
+    "popup": {
+     "relevant": [
+      {
+       "label": "^"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "^",
+    "width": 0.0457142855,
+    "popup": {
+     "relevant": [
+      {
+       "label": "°"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "!",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "1"
+      },
+      {
+       "label": "¹"
+      },
+      {
+       "label": "¡"
+      },
+      {
+       "label": "½"
+      },
+      {
+       "label": "⅓"
+      },
+      {
+       "label": "¼"
+      },
+      {
+       "label": "⅛"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "1",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "!"
+      },
+      {
+       "label": "¹"
+      },
+      {
+       "label": "¡"
+      },
+      {
+       "label": "½"
+      },
+      {
+       "label": "⅓"
+      },
+      {
+       "label": "¼"
+      },
+      {
+       "label": "⅛"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "\"",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "2"
+      },
+      {
+       "label": "²"
+      },
+      {
+       "label": "⅛"
+      },
+      {
+       "label": "⅔"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "2",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "\""
+      },
+      {
+       "label": "²"
+      },
+      {
+       "label": "⅛"
+      },
+      {
+       "label": "⅔"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "§",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "3"
+      },
+      {
+       "label": "³"
+      },
+      {
+       "label": "£"
+      },
+      {
+       "label": "¾"
+      },
+      {
+       "label": "⅜"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "3",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "§"
+      },
+      {
+       "label": "³"
+      },
+      {
+       "label": "£"
+      },
+      {
+       "label": "¾"
+      },
+      {
+       "label": "⅜"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "$",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "4"
+      },
+      {
+       "label": "¼"
+      },
+      {
+       "label": "¤"
+      },
+      {
+       "label": "⁴"
+      },
+      {
+       "label": "¢"
+      },
+      {
+       "label": "¥"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "4",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "$"
+      },
+      {
+       "label": "¼"
+      },
+      {
+       "label": "¤"
+      },
+      {
+       "label": "⁴"
+      },
+      {
+       "label": "¢"
+      },
+      {
+       "label": "¥"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "\\%",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "5"
+      },
+      {
+       "label": "½"
+      },
+      {
+       "label": "⅜"
+      },
+      {
+       "label": "‰"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "5",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "\\%"
+      },
+      {
+       "label": "½"
+      },
+      {
+       "label": "⅜"
+      },
+      {
+       "label": "‰"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "&",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "6"
+      },
+      {
+       "label": "¬"
+      },
+      {
+       "label": "⅝"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "6",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "&"
+      },
+      {
+       "label": "¬"
+      },
+      {
+       "label": "⅝"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "/",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "7"
+      },
+      {
+       "label": "{"
+      },
+      {
+       "label": "⅞"
+      },
+      {
+       "label": "♪"
+      },
+      {
+       "label": "√"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "7",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "/"
+      },
+      {
+       "label": "{"
+      },
+      {
+       "label": "⅞"
+      },
+      {
+       "label": "♪"
+      },
+      {
+       "label": "√"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "(",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "8"
+      },
+      {
+       "label": "["
+      },
+      {
+       "label": "™"
+      },
+      {
+       "label": "∞"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "8",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "("
+      },
+      {
+       "label": "["
+      },
+      {
+       "label": "™"
+      },
+      {
+       "label": "∞"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": ")",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "9"
+      },
+      {
+       "label": "]"
+      },
+      {
+       "label": "±"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "9",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": ")"
+      },
+      {
+       "label": "]"
+      },
+      {
+       "label": "±"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "=",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "0"
+      },
+      {
+       "label": "}"
+      },
+      {
+       "label": "°"
+      },
+      {
+       "label": "ⁿ"
+      },
+      {
+       "label": "≈"
+      },
+      {
+       "label": "≠"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "0",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "="
+      },
+      {
+       "label": "}"
+      },
+      {
+       "label": "°"
+      },
+      {
+       "label": "ⁿ"
+      },
+      {
+       "label": "≈"
+      },
+      {
+       "label": "≠"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "?",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "ß"
+      },
+      {
+       "label": "\\\\"
+      },
+      {
+       "label": "¿"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "ß",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "?"
+      },
+      {
+       "label": "\\\\"
+      },
+      {
+       "label": "¿"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "`",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "'"
+      },
+      {
+       "label": "‚"
+      },
+      {
+       "label": "’"
+      },
+      {
+       "label": "‘"
+      },
+      {
+       "label": "„"
+      },
+      {
+       "label": "”"
+      },
+      {
+       "label": "“"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "'",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "`"
+      },
+      {
+       "label": "‚"
+      },
+      {
+       "label": "’"
+      },
+      {
+       "label": "‘"
+      },
+      {
+       "label": "„"
+      },
+      {
+       "label": "”"
+      },
+      {
+       "label": "“"
+      }
+     ]
+    }
+   }
+  }
+ ],
+ [
+  {
+   "label": "q",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "\\@"
+     }
+    ]
+   }
+  },
+  {
+   "label": "w",
+   "width": 0.07142857142857142
+  },
+  {
+   "label": "e",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "€"
+     },
+     {
+      "label": "é"
+     },
+     {
+      "label": "è"
+     },
+     {
+      "label": "ê"
+     },
+     {
+      "label": "ë"
+     }
+    ]
+   }
+  },
+  {
+   "label": "r",
+   "width": 0.07142857142857142
+  },
+  {
+   "label": "t",
+   "width": 0.07142857142857142
+  },
+  {
+   "label": "z",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "ž"
+     }
+    ]
+   }
+  },
+  {
+   "label": "u",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "ü"
+     },
+     {
+      "label": "ú"
+     },
+     {
+      "label": "ù"
+     },
+     {
+      "label": "û"
+     },
+     {
+      "label": "ū"
+     }
+    ]
+   }
+  },
+  {
+   "label": "i",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "í"
+     },
+     {
+      "label": "ì"
+     },
+     {
+      "label": "î"
+     },
+     {
+      "label": "ï"
+     },
+     {
+      "label": "ī"
+     }
+    ]
+   }
+  },
+  {
+   "label": "o",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "ö"
+     },
+     {
+      "label": "ó"
+     },
+     {
+      "label": "ò"
+     },
+     {
+      "label": "ô"
+     },
+     {
+      "label": "õ"
+     },
+     {
+      "label": "ō"
+     },
+     {
+      "label": "ø"
+     }
+    ]
+   }
+  },
+  {
+   "label": "p",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "π"
+     },
+     {
+      "label": "₱"
+     }
+    ]
+   }
+  },
+  {
+   "label": "ü",
+   "width": 0.07142857142857142
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "*",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "+"
+      },
+      {
+       "label": "~"
+      },
+      {
+       "label": "•"
+      },
+      {
+       "label": "★"
+      },
+      {
+       "label": "±"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "+",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "*"
+      },
+      {
+       "label": "~"
+      },
+      {
+       "label": "•"
+      },
+      {
+       "label": "★"
+      },
+      {
+       "label": "±"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "'",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "\\#"
+      },
+      {
+       "label": "†"
+      },
+      {
+       "label": "‡"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "\\#",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "'"
+      },
+      {
+       "label": "†"
+      },
+      {
+       "label": "‡"
+      }
+     ]
+    }
+   }
+  }
+ ],
+ [
+  {
+   "label": "a",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "ä"
+     },
+     {
+      "label": "á"
+     },
+     {
+      "label": "à"
+     },
+     {
+      "label": "â"
+     },
+     {
+      "label": "ã"
+     },
+     {
+      "label": "å"
+     },
+     {
+      "label": "ā"
+     },
+     {
+      "label": "æ"
+     }
+    ]
+   }
+  },
+  {
+   "label": "s",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "§"
+     },
+     {
+      "label": "ß"
+     },
+     {
+      "label": "š"
+     }
+    ]
+   }
+  },
+  {
+   "label": "d",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "đ"
+     }
+    ]
+   }
+  },
+  {
+   "label": "f",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "₣"
+     }
+    ]
+   }
+  },
+  {
+   "label": "g",
+   "width": 0.07142857142857142
+  },
+  {
+   "label": "h",
+   "width": 0.07142857142857142
+  },
+  {
+   "label": "j",
+   "width": 0.07142857142857142
+  },
+  {
+   "label": "k",
+   "width": 0.07142857142857142
+  },
+  {
+   "label": "l",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "£"
+     },
+     {
+      "label": "₤"
+     },
+     {
+      "label": "λ"
+     }
+    ]
+   }
+  },
+  {
+   "label": "ö",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "♦"
+     },
+     {
+      "label": "♥"
+     },
+     {
+      "label": "♠"
+     },
+     {
+      "label": "♣"
+     }
+    ]
+   }
+  },
+  {
+   "label": "ä",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "↑"
+     },
+     {
+      "label": "↓"
+     },
+     {
+      "label": "←"
+     },
+     {
+      "label": "→"
+     }
+    ]
+   }
+  }
+ ],
+ [
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": ">",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "<"
+      },
+      {
+       "label": "\\|"
+      },
+      {
+       "label": "≤"
+      },
+      {
+       "label": "«"
+      },
+      {
+       "label": "‹"
+      },
+      {
+       "label": "≥"
+      },
+      {
+       "label": "»"
+      },
+      {
+       "label": "›"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "<",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": ">"
+      },
+      {
+       "label": "\\|"
+      },
+      {
+       "label": "≤"
+      },
+      {
+       "label": "«"
+      },
+      {
+       "label": "‹"
+      },
+      {
+       "label": "≥"
+      },
+      {
+       "label": "»"
+      },
+      {
+       "label": "›"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "label": "y",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "ý"
+     },
+     {
+      "label": "ÿ"
+     },
+     {
+      "label": "¥"
+     }
+    ]
+   }
+  },
+  {
+   "label": "x",
+   "width": 0.07142857142857142
+  },
+  {
+   "label": "c",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "ç"
+     },
+     {
+      "label": "č"
+     },
+     {
+      "label": "ć"
+     },
+     {
+      "label": "¢"
+     }
+    ]
+   }
+  },
+  {
+   "label": "v",
+   "width": 0.07142857142857142
+  },
+  {
+   "label": "b",
+   "width": 0.07142857142857142
+  },
+  {
+   "label": "n",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "ñ"
+     }
+    ]
+   }
+  },
+  {
+   "label": "m",
+   "width": 0.07142857142857142,
+   "popup": {
+    "relevant": [
+     {
+      "label": "μ"
+     }
+    ]
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": ";",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": ","
+      },
+      {
+       "label": "·"
+      },
+      {
+       "label": "×"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": ",",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": ";"
+      },
+      {
+       "label": "·"
+      },
+      {
+       "label": "×"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": ":",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "."
+      },
+      {
+       "label": "…"
+      },
+      {
+       "label": "÷"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": ".",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": ":"
+      },
+      {
+       "label": "…"
+      },
+      {
+       "label": "÷"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "_",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "-"
+      },
+      {
+       "label": "–"
+      },
+      {
+       "label": "—"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "-",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "_"
+      },
+      {
+       "label": "–"
+      },
+      {
+       "label": "—"
+      }
+     ]
+    }
+   }
+  }
+ ]
+]

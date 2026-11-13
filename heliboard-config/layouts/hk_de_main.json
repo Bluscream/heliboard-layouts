@@ -598,50 +598,189 @@
  ],
  [
   {
-   "label": "q",
-   "width": 0.07142857142857142,
-   "popup": {
-    "relevant": [
-     {
-      "label": "\\@"
-     }
-    ]
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "Q",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "\\@"
+      },
+      {
+       "label": "Q.Q"
+      },
+      {
+       "label": "QwQ"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "q",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "\\@"
+      },
+      {
+       "label": "q.q"
+      },
+      {
+       "label": "qwq"
+      }
+     ]
+    }
    }
   },
   {
-   "label": "w",
-   "width": 0.07142857142857142
-  },
-  {
-   "label": "e",
-   "width": 0.07142857142857142,
-   "popup": {
-    "relevant": [
-     {
-      "label": "€"
-     },
-     {
-      "label": "é"
-     },
-     {
-      "label": "è"
-     },
-     {
-      "label": "ê"
-     },
-     {
-      "label": "ë"
-     }
-    ]
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "W",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "OwO"
+      },
+      {
+       "label": "^W^"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "w",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "owo"
+      },
+      {
+       "label": "^w^"
+      }
+     ]
+    }
    }
   },
   {
-   "label": "r",
-   "width": 0.07142857142857142
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "E",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "€"
+      },
+      {
+       "label": "é"
+      },
+      {
+       "label": "è"
+      },
+      {
+       "label": "ê"
+      },
+      {
+       "label": "ë"
+      },
+      {
+       "label": "^^"
+      },
+      {
+       "label": "XD"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "e",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "€"
+      },
+      {
+       "label": "é"
+      },
+      {
+       "label": "è"
+      },
+      {
+       "label": "ê"
+      },
+      {
+       "label": "ë"
+      },
+      {
+       "label": "^^"
+      },
+      {
+       "label": "xd"
+      }
+     ]
+    }
+   }
   },
   {
-   "label": "t",
-   "width": 0.07142857142857142
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "R",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "ROFL"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "r",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "rofl"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "T",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "T.T"
+      },
+      {
+       "label": "TwT"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "t",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "t.t"
+      },
+      {
+       "label": "twt"
+      }
+     ]
+    }
+   }
   },
   {
    "label": "z",
@@ -655,92 +794,229 @@
    }
   },
   {
-   "label": "u",
-   "width": 0.07142857142857142,
-   "popup": {
-    "relevant": [
-     {
-      "label": "ü"
-     },
-     {
-      "label": "ú"
-     },
-     {
-      "label": "ù"
-     },
-     {
-      "label": "û"
-     },
-     {
-      "label": "ū"
-     }
-    ]
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "U",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "ü"
+      },
+      {
+       "label": "ú"
+      },
+      {
+       "label": "ù"
+      },
+      {
+       "label": "û"
+      },
+      {
+       "label": "ū"
+      },
+      {
+       "label": "UwU"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "u",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "ü"
+      },
+      {
+       "label": "ú"
+      },
+      {
+       "label": "ù"
+      },
+      {
+       "label": "û"
+      },
+      {
+       "label": "ū"
+      },
+      {
+       "label": "uwu"
+      }
+     ]
+    }
    }
   },
   {
-   "label": "i",
-   "width": 0.07142857142857142,
-   "popup": {
-    "relevant": [
-     {
-      "label": "í"
-     },
-     {
-      "label": "ì"
-     },
-     {
-      "label": "î"
-     },
-     {
-      "label": "ï"
-     },
-     {
-      "label": "ī"
-     }
-    ]
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "I",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "í"
+      },
+      {
+       "label": "ì"
+      },
+      {
+       "label": "î"
+      },
+      {
+       "label": "ï"
+      },
+      {
+       "label": "ī"
+      },
+      {
+       "label": "^-^"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "i",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "í"
+      },
+      {
+       "label": "ì"
+      },
+      {
+       "label": "î"
+      },
+      {
+       "label": "ï"
+      },
+      {
+       "label": "ī"
+      },
+      {
+       "label": "^-^"
+      }
+     ]
+    }
    }
   },
   {
-   "label": "o",
-   "width": 0.07142857142857142,
-   "popup": {
-    "relevant": [
-     {
-      "label": "ö"
-     },
-     {
-      "label": "ó"
-     },
-     {
-      "label": "ò"
-     },
-     {
-      "label": "ô"
-     },
-     {
-      "label": "õ"
-     },
-     {
-      "label": "ō"
-     },
-     {
-      "label": "ø"
-     }
-    ]
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "O",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "ö"
+      },
+      {
+       "label": "ó"
+      },
+      {
+       "label": "ò"
+      },
+      {
+       "label": "ô"
+      },
+      {
+       "label": "õ"
+      },
+      {
+       "label": "ō"
+      },
+      {
+       "label": "ø"
+      },
+      {
+       "label": "O.O"
+      },
+      {
+       "label": "OwO"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "o",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "ö"
+      },
+      {
+       "label": "ó"
+      },
+      {
+       "label": "ò"
+      },
+      {
+       "label": "ô"
+      },
+      {
+       "label": "õ"
+      },
+      {
+       "label": "ō"
+      },
+      {
+       "label": "ø"
+      },
+      {
+       "label": "o.o"
+      },
+      {
+       "label": "owo"
+      }
+     ]
+    }
    }
   },
   {
-   "label": "p",
-   "width": 0.07142857142857142,
-   "popup": {
-    "relevant": [
-     {
-      "label": "π"
-     },
-     {
-      "label": "₱"
-     }
-    ]
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "P",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "π"
+      },
+      {
+       "label": "₱"
+      },
+      {
+       "label": ":P"
+      },
+      {
+       "label": ";P"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "p",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "π"
+      },
+      {
+       "label": "₱"
+      },
+      {
+       "label": ":p"
+      },
+      {
+       "label": ";p"
+      }
+     ]
+    }
    }
   },
   {
@@ -836,107 +1112,348 @@
  ],
  [
   {
-   "label": "a",
-   "width": 0.07142857142857142,
-   "popup": {
-    "relevant": [
-     {
-      "label": "ä"
-     },
-     {
-      "label": "á"
-     },
-     {
-      "label": "à"
-     },
-     {
-      "label": "â"
-     },
-     {
-      "label": "ã"
-     },
-     {
-      "label": "å"
-     },
-     {
-      "label": "ā"
-     },
-     {
-      "label": "æ"
-     }
-    ]
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "A",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "ä"
+      },
+      {
+       "label": "á"
+      },
+      {
+       "label": "à"
+      },
+      {
+       "label": "â"
+      },
+      {
+       "label": "ã"
+      },
+      {
+       "label": "å"
+      },
+      {
+       "label": "ā"
+      },
+      {
+       "label": "æ"
+      },
+      {
+       "label": "(^-^)/"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "a",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "ä"
+      },
+      {
+       "label": "á"
+      },
+      {
+       "label": "à"
+      },
+      {
+       "label": "â"
+      },
+      {
+       "label": "ã"
+      },
+      {
+       "label": "å"
+      },
+      {
+       "label": "ā"
+      },
+      {
+       "label": "æ"
+      },
+      {
+       "label": "(^-^)/"
+      }
+     ]
+    }
    }
   },
   {
-   "label": "s",
-   "width": 0.07142857142857142,
-   "popup": {
-    "relevant": [
-     {
-      "label": "§"
-     },
-     {
-      "label": "ß"
-     },
-     {
-      "label": "š"
-     }
-    ]
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "S",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "§"
+      },
+      {
+       "label": "ß"
+      },
+      {
+       "label": "š"
+      },
+      {
+       "label": "(._.)/"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "s",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "§"
+      },
+      {
+       "label": "ß"
+      },
+      {
+       "label": "š"
+      },
+      {
+       "label": "(._.)/"
+      }
+     ]
+    }
    }
   },
   {
-   "label": "d",
-   "width": 0.07142857142857142,
-   "popup": {
-    "relevant": [
-     {
-      "label": "đ"
-     }
-    ]
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "D",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "đ"
+      },
+      {
+       "label": ":D"
+      },
+      {
+       "label": "XD"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "d",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "đ"
+      },
+      {
+       "label": ":d"
+      },
+      {
+       "label": "xd"
+      }
+     ]
+    }
    }
   },
   {
-   "label": "f",
-   "width": 0.07142857142857142,
-   "popup": {
-    "relevant": [
-     {
-      "label": "₣"
-     }
-    ]
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "F",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "₣"
+      },
+      {
+       "label": "ORZ"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "f",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "₣"
+      },
+      {
+       "label": "orz"
+      }
+     ]
+    }
    }
   },
   {
-   "label": "g",
-   "width": 0.07142857142857142
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "G",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "GG"
+      },
+      {
+       "label": "GJ"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "g",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "gg"
+      },
+      {
+       "label": "gj"
+      }
+     ]
+    }
+   }
   },
   {
-   "label": "h",
-   "width": 0.07142857142857142
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "H",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "(^O^)/"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "h",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "(^o^)/"
+      }
+     ]
+    }
+   }
   },
   {
-   "label": "j",
-   "width": 0.07142857142857142
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "J",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "JK"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "j",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "jk"
+      }
+     ]
+    }
+   }
   },
   {
-   "label": "k",
-   "width": 0.07142857142857142
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "K",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "K"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "k",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "k"
+      }
+     ]
+    }
+   }
   },
   {
-   "label": "l",
-   "width": 0.07142857142857142,
-   "popup": {
-    "relevant": [
-     {
-      "label": "£"
-     },
-     {
-      "label": "₤"
-     },
-     {
-      "label": "λ"
-     }
-    ]
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "L",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "£"
+      },
+      {
+       "label": "₤"
+      },
+      {
+       "label": "λ"
+      },
+      {
+       "label": "LOL"
+      },
+      {
+       "label": "LMAO"
+      },
+      {
+       "label": "LMFAO"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "l",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "£"
+      },
+      {
+       "label": "₤"
+      },
+      {
+       "label": "λ"
+      },
+      {
+       "label": "lol"
+      },
+      {
+       "label": "lmao"
+      },
+      {
+       "label": "lmfao"
+      }
+     ]
+    }
    }
   },
   {
@@ -1049,74 +1566,244 @@
    }
   },
   {
-   "label": "y",
-   "width": 0.07142857142857142,
-   "popup": {
-    "relevant": [
-     {
-      "label": "ý"
-     },
-     {
-      "label": "ÿ"
-     },
-     {
-      "label": "¥"
-     }
-    ]
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "Y",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "ý"
+      },
+      {
+       "label": "ÿ"
+      },
+      {
+       "label": "¥"
+      },
+      {
+       "label": "YAY"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "y",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "ý"
+      },
+      {
+       "label": "ÿ"
+      },
+      {
+       "label": "¥"
+      },
+      {
+       "label": "yay"
+      }
+     ]
+    }
    }
   },
   {
-   "label": "x",
-   "width": 0.07142857142857142
-  },
-  {
-   "label": "c",
-   "width": 0.07142857142857142,
-   "popup": {
-    "relevant": [
-     {
-      "label": "ç"
-     },
-     {
-      "label": "č"
-     },
-     {
-      "label": "ć"
-     },
-     {
-      "label": "¢"
-     }
-    ]
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "X",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "XD"
+      },
+      {
+       "label": "XP"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "x",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "xd"
+      },
+      {
+       "label": "xp"
+      }
+     ]
+    }
    }
   },
   {
-   "label": "v",
-   "width": 0.07142857142857142
-  },
-  {
-   "label": "b",
-   "width": 0.07142857142857142
-  },
-  {
-   "label": "n",
-   "width": 0.07142857142857142,
-   "popup": {
-    "relevant": [
-     {
-      "label": "ñ"
-     }
-    ]
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "C",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "ç"
+      },
+      {
+       "label": "č"
+      },
+      {
+       "label": "ć"
+      },
+      {
+       "label": "¢"
+      },
+      {
+       "label": ":3"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "c",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "ç"
+      },
+      {
+       "label": "č"
+      },
+      {
+       "label": "ć"
+      },
+      {
+       "label": "¢"
+      },
+      {
+       "label": ":3"
+      }
+     ]
+    }
    }
   },
   {
-   "label": "m",
-   "width": 0.07142857142857142,
-   "popup": {
-    "relevant": [
-     {
-      "label": "μ"
-     }
-    ]
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "V",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "V.V"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "v",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "v.v"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "B",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "BRB"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "b",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "brb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "N",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "ñ"
+      },
+      {
+       "label": "N_N"
+      },
+      {
+       "label": "NP"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "n",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "ñ"
+      },
+      {
+       "label": "n_n"
+      },
+      {
+       "label": "np"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "$": "shift_state_selector",
+   "manualOrLocked": {
+    "label": "M",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "μ"
+      },
+      {
+       "label": "M(_ _)M"
+      }
+     ]
+    }
+   },
+   "default": {
+    "label": "m",
+    "width": 0.07142857142857142,
+    "popup": {
+     "relevant": [
+      {
+       "label": "μ"
+      },
+      {
+       "label": "m(_ _)m"
+      }
+     ]
+    }
    }
   },
   {
@@ -1167,6 +1854,9 @@
        "label": "."
       },
       {
+       "label": "emoji"
+      },
+      {
        "label": "…"
       },
       {
@@ -1182,6 +1872,9 @@
      "relevant": [
       {
        "label": ":"
+      },
+      {
+       "label": "emoji"
       },
       {
        "label": "…"

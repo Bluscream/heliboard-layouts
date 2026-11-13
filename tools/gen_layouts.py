@@ -5,7 +5,9 @@ Source of truth: hackerskeyboard res/xml-de/kbd_full.xml, res/xml/kbd_full_fn.xm
 res/values-de/donottranslate-keymap.xml (key_*_main / _shift / _alt strings).
 
 Outputs into ../heliboard-config/layouts/:
-  hk_de_main.json            main layout (number row + 3 letter rows)
+  hk_de_main_classic.json    classic main layout (exact Hacker's Keyboard keys/popups)
+  hk_de_main_enhanced.json   enhanced main layout (with emoji on period and common emotes on letters)
+  hk_de_main.json            default (same as enhanced)
   hk_functional.json         functional keys for all 5 rows (Tab/Ctrl/Shift/Esc/Alt/Meta/Fn/arrows)
   hk_fn_layer.json           Fn layer (used as NUMPAD / NUMPAD_LANDSCAPE layout), stock HeliBoard
   hk_fn_layer_patched.json   same, with Del/SysRq/ScrollLock/Break/NumLock/D-pad-centre codes that
@@ -32,14 +34,11 @@ FORWARD_DELETE, DPAD_CENTER, SYSRQ, SCROLL_LOCK, BREAK, NUM_LOCK = -9, -10055, -
 
 U = 1 / 14  # one Hacker's Keyboard column (7.142857%p)
 
-# ---- Hacker's Keyboard German key map: (main, shift or None, alternates) ----
-# alternates exactly as key_*_alt / alternates_for_* in values-de, minus main/shift chars and
-# minus leading digits on letters (HK hint mode hides them; digits are on the number row).
 NUMBER_ROW = [
     ("^", "°", "^°"), ("1", "!", "1!¹¡½⅓¼⅛"), ("2", '"', '2"²⅛⅔'), ("3", "§", "3§³£¾⅜"),
     ("4", "$", "4$¼¤⁴¢¥"), ("5", "%", "5%½⅜‰"), ("6", "&", "6&¬⅝"), ("7", "/", "7/{⅞♪√"),
-    ("8", "(", "8([™∞"), ("9", ")", "9)]±"), ("0", "=", "0=}°ⁿ≈≠"), ("ß", "?", "ß?\\¿"),
-    ("'", "`", "'`‚’‘„”“"),
+    ("8", "(", "8([™∞"), ("9", ")", "9)]±"), ("0", "=", "0=}°ⁿ≈≠"), ("ß", "?", "ß?\¿"),
+    ("\x27", "`", "\x27`‚’‘„”“"),
 ]
 ROW_Q = [
     ("q", None, "1@"), ("w", None, "2"), ("e", None, "3€éèêë"), ("r", None, "4"), ("t", None, "5"),
@@ -57,41 +56,117 @@ ROW_Y = [
     ("-", "_", "-_–—"),
 ]
 
-# characters with a special meaning in HeliBoard labels (see pcqwerty.json / KeySpecParser)
+EMOTES = {
+    "q": ["q.q", "qwq"],
+    "Q": ["Q.Q", "QwQ"],
+    "w": ["owo", "^w^"],
+    "W": ["OwO", "^W^"],
+    "e": ["^^", "xd"],
+    "E": ["^^", "XD"],
+    "r": ["rofl"],
+    "R": ["ROFL"],
+    "t": ["t.t", "twt"],
+    "T": ["T.T", "TwT"],
+    "y": ["yay"],
+    "Y": ["YAY"],
+    "u": ["uwu"],
+    "U": ["UwU"],
+    "i": ["^-^"],
+    "I": ["^-^"],
+    "o": ["o.o", "owo"],
+    "O": ["O.O", "OwO"],
+    "p": [":p", ";p"],
+    "P": [":P", ";P"],
+    "a": ["(^-^)/"],
+    "A": ["(^-^)/"],
+    "s": ["(._.)/"],
+    "S": ["(._.)/"],
+    "d": [":d", "xd"],
+    "D": [":D", "XD"],
+    "f": ["orz"],
+    "F": ["ORZ"],
+    "g": ["gg", "gj"],
+    "G": ["GG", "GJ"],
+    "h": ["(^o^)/"],
+    "H": ["(^O^)/"],
+    "j": ["jk"],
+    "J": ["JK"],
+    "k": ["k"],
+    "K": ["K"],
+    "l": ["lol", "lmao", "lmfao"],
+    "L": ["LOL", "LMAO", "LMFAO"],
+    "x": ["xd", "xp"],
+    "X": ["XD", "XP"],
+    "c": [":3"],
+    "C": [":3"],
+    "v": ["v.v"],
+    "V": ["V.V"],
+    "b": ["brb"],
+    "B": ["BRB"],
+    "n": ["n_n", "np"],
+    "N": ["N_N", "NP"],
+    "m": ["m(_ _)m"],
+    "M": ["M(_ _)M"],
+}
+
 _ESCAPE = {"@", "#", "%", "|", "\\"}
 
 
 def esc(ch: str) -> str:
-    return "\\" + ch if ch in _ESCAPE else ch
+    return "".join(chr(92) + c if c in _ESCAPE else c for c in ch)
 
 
-def popup(chars: list[str]) -> dict:
-    return {"relevant": [{"label": esc(c)} for c in chars]}
+def popup(items: list[str]) -> dict:
+    return {"relevant": [{"label": esc(c)} for c in items]}
 
 
-def char_key(main: str, shift: str | None, alt: str, width: float = U) -> dict:
+def char_key(main: str, shift: str | None, alt: str, width: float = U, enhanced: bool = False) -> dict:
     alts = [c for c in alt if c != main and c != shift and not (c.isdigit() and not main.isdigit())]
-    # dedupe, keep order
     seen: set[str] = set()
     alts = [c for c in alts if not (c in seen or seen.add(c))]
+
     if shift is None:
         key: dict = {"label": esc(main), "width": width}
-        if alts:
-            key["popup"] = popup(alts)
+        pop_items = list(alts)
+        if enhanced:
+            if main in EMOTES:
+                pop_items.extend(EMOTES[main])
+            upper = main.upper()
+            if upper != main and upper in EMOTES:
+                upper_pop = list(alts) + EMOTES[upper]
+                shifted_key = {"label": esc(upper), "width": width}
+                if upper_pop:
+                    shifted_key["popup"] = popup(upper_pop)
+                if pop_items:
+                    key["popup"] = popup(pop_items)
+                return {"$": "shift_state_selector", "manualOrLocked": shifted_key, "default": key}
+        if pop_items:
+            key["popup"] = popup(pop_items)
         return key
-    # explicit shift label like HK's shiftLabel; hint shows the shifted char (first popup)
-    unshifted = {"label": esc(main), "width": width, "popup": popup([shift, *alts])}
-    shifted = {"label": esc(shift), "width": width, "popup": popup([main, *alts])}
+
+    unshifted_pop = [shift, *alts]
+    shifted_pop = [main, *alts]
+    if enhanced and main == ".":
+        unshifted_pop.insert(1, "emoji")
+        shifted_pop.insert(1, "emoji")
+
+    unshifted = {"label": esc(main), "width": width, "popup": popup(unshifted_pop)}
+    shifted = {"label": esc(shift), "width": width, "popup": popup(shifted_pop)}
     return {"$": "shift_state_selector", "manualOrLocked": shifted, "default": unshifted}
 
 
-def main_layout() -> list:
-    row1 = [char_key(*NUMBER_ROW[0], width=0.0457142855), *(char_key(*k) for k in NUMBER_ROW[1:])]
-    return [row1, [char_key(*k) for k in ROW_Q], [char_key(*k) for k in ROW_A], [char_key(*k) for k in ROW_Y]]
+def main_layout(enhanced: bool = False) -> list:
+    row1 = [char_key(*NUMBER_ROW[0], width=0.0457142855, enhanced=enhanced), *(char_key(*k, enhanced=enhanced) for k in NUMBER_ROW[1:])]
+    return [
+        row1,
+        [char_key(*k, enhanced=enhanced) for k in ROW_Q],
+        [char_key(*k, enhanced=enhanced) for k in ROW_A],
+        [char_key(*k, enhanced=enhanced) for k in ROW_Y]
+    ]
 
 
-PRESERVE_CASE = 65536  # keyLabelFlags preserveCase: keep "Ctrl"/"Esc"/"Fn" when shifted
-NO_HINT = 1073741824  # keyLabelFlags disableKeyHintLabel
+PRESERVE_CASE = 65536
+NO_HINT = 1073741824
 
 
 def fk(label: str, code: int, width: float = U, **extra) -> dict:
@@ -101,7 +176,6 @@ def fk(label: str, code: int, width: float = U, **extra) -> dict:
 def bottom_row(patched: bool, fn_code: int) -> list:
     return [
         fk("Esc", ESCAPE, 1.5 * U),
-        # HK shares this key with the mic: tap = settings, long-press = voice input
         {"label": "settings", "width": U, "type": "function", "popup": {"relevant": [{"label": "voice"}]}},
         fk("Alt", ALT_LEFT),
         fk("❖", META_LEFT),
@@ -129,7 +203,7 @@ def functional_layout() -> list:
 
 
 def fn_layer(patched: bool) -> list:
-    w = 0.08035714  # kbd_full_fn.xml: 8.035714%p
+    w = 0.08035714
     nop = UNSPECIFIED
 
     def n(label: str) -> dict:
@@ -163,11 +237,12 @@ def patched_functional() -> list:
 
 def write(name: str, data: list) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / name).write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-
+    (OUT / name).write_text(json.dumps(data, ensure_ascii=False, indent=1) + chr(10), encoding="utf-8")
 
 if __name__ == "__main__":
-    write("hk_de_main.json", main_layout())
+    write("hk_de_main_classic.json", main_layout(enhanced=False))
+    write("hk_de_main_enhanced.json", main_layout(enhanced=True))
+    write("hk_de_main.json", main_layout(enhanced=True))
     write("hk_functional.json", functional_layout())
     write("hk_functional_patched.json", patched_functional())
     write("hk_fn_layer.json", fn_layer(patched=False))
